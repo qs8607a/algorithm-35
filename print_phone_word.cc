@@ -59,7 +59,7 @@ void print_word(char number[], int n) {
 }
 
 int main() {
-  print_word("23445", 5);
+  print_word("23", 2);
 }
 
 
