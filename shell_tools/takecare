@@ -1,0 +1,25 @@
+#! /usr/bin/expect
+# login to searchroot
+
+set ip [lindex $argv 0]
+set user [lindex $argv 1]
+set passwd [lindex $argv 2]
+set i 4
+set cmd [lindex $argv 3]
+puts $argv
+while {$i <= $argc} {
+    append cmd " "
+    append cmd [lindex $argv $i]
+    incr i
+}
+
+spawn ssh $user@$ip
+expect "password:"
+send "${passwd}\n"
+expect "$ "
+send "$cmd\n"
+expect "$ "
+send "exit\n"
+expect eof
+exit
+

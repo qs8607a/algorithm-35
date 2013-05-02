@@ -1,0 +1,10 @@
+import os
+import sys
+
+def tokens(nodex):
+    for x in xrange(nodes):
+        print 2 ** 127 / nodes * x
+
+if __name__ == '__main__':
+    nodes = int(sys.argv[1])
+    tokens(nodes)

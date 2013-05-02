@@ -1,0 +1,14 @@
+#! /bin/bash
+
+MAC_LIST="10.1.1.89 10.1.1.91"
+
+user=rmss
+passwd=inf2012
+for mac in ${MAC_LIST}
+do
+    echo solve $mac
+    cmd="mkdir -p /home/rmss/local/bin;\
+         echo PATH=/home/rmss/local/bin:$PATH >>~/.profile"
+    takecare $mac $user $passwd $cmd
+done
+
